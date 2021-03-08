@@ -10,100 +10,60 @@ export default {
       items: [
         {
           id: 1,
+          errortext: 'This field is required',
           inputidtag: 'your-name-input',
           inputclass: 'form-control',
           type: 'text',
           label: 'Your Name',
           labelclass: 'control-label',
           placeholder: 'John Doe / Jane Doe',
-          required: true
+          required: true,
+          value: ''
         },
         {
           id: 2,
+          errortext: 'This field is required',
           inputidtag: 'mobile-input',
           inputclass: 'form-control',
           type: 'number',
           label: 'Mobile Phone Number',
           labelclass: 'control-label',
           placeholder: '123456789',
-          required: true
-        },
-        {
-          id: 3,
-          inputidtag: 'postal-code-input',
-          inputclass: 'form-control',
-          type: 'number',
-          label: 'Postal/Zip Code',
-          labelclass: 'control-label',
-          placeholder: '12345',
-          required: true
-        },
-        {
-          id: 4,
-          inputidtag: 'email-input',
-          inputclass: 'form-control',
-          type: 'email',
-          label: 'E-mail',
-          labelclass: 'control-label',
-          placeholder: 'mail@domain.com',
-          required: true
-        },
-        {
-          id: 5,
-          inputidtag: 'password-input',
-          inputclass: 'form-control',
-          type: 'password',
-          label: 'Password',
-          labelclass: 'control-label',
-          placeholder: 'Password',
-          required: true
+          required: true,
+          value: '1'
         }
         // {
-        //   id: 6,
-        //   inputidtag: 'repeat-password-input',
+        //   id: 3,
+        //   inputidtag: 'postal-code-input',
         //   inputclass: 'form-control',
-        //   type: 'password',
-        //   label: 'Confirm Password',
+        //   type: 'number',
+        //   label: 'Postal/Zip Code',
         //   labelclass: 'control-label',
-        //   placeholder: 'Confirm Password',
-        //   required: true
+        //   placeholder: '12345',
+        //   required: true,
+        //   value: '2'
         // },
         // {
-        //   id: 7,
-        //   inputidtag: 'province-input',
-        //   inputclass: 'form-control',
-        //   type: 'text',
-        //   label: 'Province',
-        //   labelclass: 'control-label',
-        //   placeholder: 'Type Province',
-        //   required: true
-        // },
-        // {
-        //   id: 8,
+        //   id: 4,
         //   inputidtag: 'email-input',
         //   inputclass: 'form-control',
-        //   type: 'search',
+        //   type: 'email',
         //   label: 'E-mail',
         //   labelclass: 'control-label',
-        //   placeholder: 'mail@domain.com'
+        //   placeholder: 'mail@domain.com',
+        //   required: true,
+        //   value: ''
         // },
         // {
-        //   id: 9,
-        //   inputidtag: 'address-text-input',
+        //   id: 5,
+        //   inputidtag: 'password-input',
         //   inputclass: 'form-control',
-        //   type: 'text',
-        //   label: 'Address',
+        //   type: 'password',
+        //   label: 'Password',
         //   labelclass: 'control-label',
-        //   placeholder: 'Type Address'
-        // },
-        // {
-        //   id: 10,
-        //   inputidtag: 'address-text-input',
-        //   inputclass: 'form-control',
-        //   type: 'text',
-        //   label: 'Address',
-        //   labelclass: 'control-label',
-        //   placeholder: 'Type Address'
+        //   placeholder: 'Password',
+        //   required: true,
+        //   value: ''
         // }
       ]
     }

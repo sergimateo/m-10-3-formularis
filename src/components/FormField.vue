@@ -12,8 +12,12 @@
             :type="dataitem.type"
             :placeholder="dataitem.placeholder"
             :class="dataitem.inputclass"
-          />{{ dataitem.textinsideinput }}
-          <span class="help-block" id="city-error"></span>
+            @input="fieldValidate"
+            :value="dataitem.value"
+          />
+          <span class="help-block" id="city-error">
+            {{ dataitem.errortext }}
+          </span>
         </div>
       </div>
     </div>
@@ -30,6 +34,8 @@
 <style src="./../Styles/CSS/form-field.css"></style>
 
 <!-- </div>
+:value="dataitem.value"
+
     <ConfirmPwdField
       v-if="dataitem.inputidtag === 'password-input'"
       :key="confirmpwditem.id"

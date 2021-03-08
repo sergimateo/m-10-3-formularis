@@ -7,12 +7,16 @@
         action="register-complete.html"
       >
         <legend class="pb-2">Registration Form</legend>
-        <!-- <div class="form-row"></div> -->
 
-        <FormField v-for="item of items" :key="item.id" :dataitem="item">
+        <FormField
+          v-for="item of items"
+          :key="item.id"
+          :dataitem="item"
+          @contentChanged="item.value = $event"
+        >
         </FormField>
         <label class="col-md-4 control-label" for="register-button-id"></label>
-        <div class="col-md-8">
+        <div class="">
           <button
             id="submit-register-button"
             type="submit"
@@ -23,6 +27,7 @@
         </div>
       </form>
     </div>
+    <footer class="pt-3">© Copyright 2021 - SMC Designs</footer>
   </section>
 </template>
 
