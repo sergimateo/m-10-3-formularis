@@ -1,7 +1,32 @@
+import ConfirmPwdField from './../components/ConfirmPwdField'
+
 export default {
-  components: {},
-  data() {
-    return {}
+  name: 'app-form-field',
+  components: {
+    ConfirmPwdField
   },
-  props: ['typeprop']
+  data() {
+    return {
+      cosita: 'Holi',
+      confirmpwditems: {
+        id: 1,
+        inputidtag: 'repeat-password-input',
+        inputclass: 'form-control',
+        type: 'password',
+        label: 'Confirm Password',
+        labelclass: 'control-label',
+        placeholder: 'Confirm Password',
+        required: true
+      }
+    }
+  },
+  props: [
+    // 'datatype',
+    // 'dataplaceholder',
+    // 'dataidtag',
+    // 'datalabel',
+    // 'dataclass',
+    // 'datalabelclass',
+    'dataitem'
+  ]
 }
