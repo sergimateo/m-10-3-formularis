@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img id="vue-logo" alt="Vue logo" src="./assets/logo.png" />
+    <img id="visitors-v-logo" alt="Vue logo" src="./assets/visitors-logo.jpg" />
     <app-form-container></app-form-container>
   </div>
 </template>

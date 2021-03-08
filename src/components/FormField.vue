@@ -15,7 +15,7 @@
             @input="fieldValidate"
             :value="dataitem.value"
           />
-          <span class="help-block" id="city-error">
+          <span class="help-block" id="error-text">
             {{ dataitem.errortext }}
           </span>
         </div>

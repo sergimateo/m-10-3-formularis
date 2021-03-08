@@ -29,8 +29,6 @@ export default {
           if (event.target.value === '') {
             // this.dataitem.inputName.classList.add('is-invalid')
             this.dataitem.errortext = 'This field is required'
-            // this.dataitem.value = event.target.value
-            // this.$emit('contentChanged', this.dataitem.value)
             this.checkField = false
           } else if (!this.validateName(event.target.value)) {
             this.dataitem.errortext =
@@ -38,41 +36,78 @@ export default {
             this.checkField = false
           } else {
             // inputName.classList.remove('is-invalid')
-            this.dataitem.errortext = 'Palante'
+            this.dataitem.errortext = ''
             this.checkField = true
-            // this.dataitem.value = event.target.value
-            // this.$emit('contentChanged', this.dataitem.value)
           }
-          this.dataitem.value = event.target.value
-          this.$emit('contentChanged', this.dataitem.value)
-          console.log(this.dataitem.value)
+          this.updateContent(event.target.value)
           break
         case 'mobile-input':
-          if (this.dataitem.value === '') {
+          if (event.target.value === '') {
             // this.dataitem.inputName.classList.add('is-invalid')
             this.dataitem.errortext = 'This field is required'
-            // this.dataitem.value = event.target.value
-            // this.$emit('contentChanged', this.dataitem.value)
             this.checkField = false
-            console.log('Holi')
-            // }
-            // else if (!validateName(inputName.value)) {
-            //   inputName.classList.add('is-invalid')
-            //   document.getElementById('your-name-error').textContent =
-            //     'Your name must have at least 3 characters'
-            //   checkField = false
-            // This field is required
+          } else if (!this.validateMobile(event.target.value)) {
+            this.dataitem.errortext = 'Your phone number must have 9 digits'
+            this.checkField = false
           } else {
             // inputName.classList.remove('is-invalid')
-            this.dataitem.errortext = 'Vamos'
+            this.dataitem.errortext = ''
+            this.checkField = true
           }
-          this.dataitem.value = event.target.value
-          this.$emit('contentChanged', this.dataitem.value)
+          this.updateContent(event.target.value)
+          break
+        case 'postal-code-input':
+          if (event.target.value === '') {
+            // this.dataitem.inputName.classList.add('is-invalid')
+            this.dataitem.errortext = 'This field is required'
+            this.checkField = false
+          } else if (!this.validatePostalCode(event.target.value)) {
+            this.dataitem.errortext = 'Your Postal Code must have 5 digits'
+            this.checkField = false
+          } else {
+            // inputName.classList.remove('is-invalid')
+            this.dataitem.errortext = ''
+            this.checkField = true
+          }
+          this.updateContent(event.target.value)
+          break
+        case 'email-input':
+          if (event.target.value === '') {
+            // this.dataitem.inputName.classList.add('is-invalid')
+            this.dataitem.errortext = 'This field is required'
+            this.checkField = false
+          } else if (!this.validateEmail(event.target.value)) {
+            this.dataitem.errortext = 'Please enter a valid email address'
+            this.checkField = false
+          } else {
+            // inputName.classList.remove('is-invalid')
+            this.dataitem.errortext = ''
+            this.checkField = true
+          }
+          this.updateContent(event.target.value)
+          break
+        case 'password-input':
+          if (event.target.value === '') {
+            // this.dataitem.inputName.classList.add('is-invalid')
+            this.dataitem.errortext = 'This field is required'
+            this.checkField = false
+          } else if (!this.validatePassword(event.target.value)) {
+            this.dataitem.errortext =
+              'Your password needs to be between 6 and 13 characters long, only letters and at least one uppercase and one lowercase'
+            this.checkField = false
+          } else {
+            // inputName.classList.remove('is-invalid')
+            this.dataitem.errortext = ''
+            this.checkField = true
+          }
+
           console.log(this.dataitem.value)
           break
         default:
           break
       }
+      this.dataitem.value = event.target.value
+      this.$emit('contentChanged', this.dataitem.value)
       // checkField = false
       // if (checkField) {
       //   return true
@@ -82,98 +117,34 @@ export default {
 
       // this.btnCount++
     },
+    updateContent(val) {
+      this.dataitem.value = val
+      this.$emit('contentChanged', this.dataitem.value)
+    },
     //RegEx test functions
     validateName(name) {
-      // eslint-disable-next-line no-useless-escape
-      let regex = /^(?=.*?[a-zA-Z\ñ\ ]).{6,13}$/
+      let regex = /^(?=.*?[a-zA-Z\ñ\ç]).{6,13}$/
       return regex.test(name) ? true : false
     },
-    validateMobile(name) {
-      // eslint-disable-next-line no-useless-escape
-      let regex = /^(?=.*?[::digit::]).{9}$/
-      return regex.test(name) ? true : false
+    validateMobile(number) {
+      let regex = /^(?=.*?[0-9]).{9}$/
+      return regex.test(number) ? true : false
+    },
+    validatePostalCode(number) {
+      let regex = /^(?=.*?[0-9]).{9}$/
+      return regex.test(number) ? true : false
+    },
+    validateEmail(email) {
+      let regex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/
+      return regex.test(email) ? true : false
+    },
+    validatePassword(password) {
+      let regex = /^(?=.*?[a-zA-Z\ñ\ç]).{6,13}$/
+      return regex.test(password) ? true : false
     }
   },
   props: ['dataitem']
 }
-
-// formValidate()
-
-// function formValidate() {
-//   // var checkForm = true
-
-//   // Check switch case
-
-//   switch (this.dataitem.inputidtag) {
-//     case 'your-name-input':
-//       console.log('name')
-//       break
-//     case 'mobile-input':
-//       console.log('mobile')
-//       break
-//     case 'postal-code-input':
-//       console.log('zip code')
-//       break
-//     case 'email-input':
-//       console.log('email')
-//       break
-//     case 'password-input':
-//       console.log('pwd')
-//       break
-//     default:
-//       break
-//   }
-// }
-// Check name
-
-//   if (inputName.value === '') {
-//     inputName.classList.add('is-invalid')
-//     document.getElementById('your-name-error').textContent =
-//       'This field is required'
-//     checkForm = false
-//   } else if (!validateName(inputName.value)) {
-//     inputName.classList.add('is-invalid')
-//     document.getElementById('your-name-error').textContent =
-//       'Your name must have at least 3 characters'
-//     checkForm = false
-//   } else {
-//     inputName.classList.remove('is-invalid')
-//     document.getElementById('your-name-error').textContent = ''
-//   }
-
-//   // Check email
-//   if (inputEmail.value == '') {
-//     inputEmail.classList.add('is-invalid')
-//     document.getElementById('email-error').textContent =
-//       'This field is required'
-//     checkForm = false
-//   } else if (!validateEmail(inputEmail.value)) {
-//     inputEmail.classList.add('is-invalid')
-//     document.getElementById('email-error').textContent =
-//       'Please enter a valid email address'
-//     checkForm = false
-//   } else {
-//     inputEmail.classList.remove('is-invalid')
-//     document.getElementById('email-error').textContent = ''
-//   }
-
-//   // Check password
-
-//   if (inputPassword.value == '') {
-//     inputPassword.classList.add('is-invalid')
-//     document.getElementById('password-error').textContent =
-//       'This field is required'
-//     checkForm = false
-//   } else if (!validatePassword(inputPassword.value)) {
-//     inputPassword.classList.add('is-invalid')
-//     document.getElementById('password-error').textContent =
-//       'Your password needs at least 8 characters long, and contain one uppercase letter and a number'
-//     inputPassword.value = ''
-//     checkForm = false
-//   } else {
-//     inputPassword.classList.remove('is-invalid')
-//     document.getElementById('password-error').textContent = ''
-//   }
 
 //   // Check confirm password, if they don't match, clear both password fields and try again
 //   // A1sdfghj
@@ -194,41 +165,6 @@ export default {
 //     document.getElementById('repeat-password-error').textContent = ''
 //   }
 
-//   // City name must not be empty
-
-//   if (inputCity.value == '') {
-//     inputCity.classList.add('is-invalid')
-//     document.getElementById('city-error').textContent = 'This field is required'
-//     checkForm = false
-//   } else {
-//     inputCity.classList.remove('is-invalid')
-//     document.getElementById('city-error').textContent = ''
-//   }
-
-//   // Province select option must not be empty
-
-//   if (inputProvince.value == 0) {
-//     inputProvince.classList.add('is-invalid')
-//     document.getElementById('province-error').textContent =
-//       'This field is required'
-//     checkForm = false
-//   } else {
-//     inputProvince.classList.remove('is-invalid')
-//     document.getElementById('province-error').textContent = ''
-//   }
-
-//   // Check privacy policy
-
-//   if (!gridCheck.checked) {
-//     gridCheck.classList.add('is-invalid')
-//     document.getElementById('checkbox-error').textContent =
-//       'You must agree to the Privacy Policy'
-//     checkForm = false
-//   } else {
-//     gridCheck.classList.remove('is-invalid')
-//     document.getElementById('checkbox-error').textContent = ''
-//   }
-
 //   console.log(checkForm)
 
 //   if (checkForm) {
@@ -236,22 +172,4 @@ export default {
 //   } else {
 //     return false
 //   }
-// }
-
-//RegEx test functions
-
-// function validateName(name) {
-//   // eslint-disable-next-line no-useless-escape
-//   let regex = /^(?=.*?[a-zA-Z\ñ\ ]).{3,}$/
-//   return regex.test(name) ? true : false
-// }
-
-// function validateEmail(email) {
-//   let regex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/
-//   return regex.test(email) ? true : false
-// }
-
-// function validatePassword(password) {
-//   let regex = /^(?=.*?[A-Z])(?=.*?[0-9]).{8,}$/
-//   return regex.test(password) ? true : false
 // }

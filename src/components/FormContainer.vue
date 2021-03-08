@@ -6,7 +6,7 @@
         id="validation-form"
         action="register-complete.html"
       >
-        <legend class="pb-2">Registration Form</legend>
+        <legend class="register-text pb-2">{{ registermsg }}</legend>
 
         <FormField
           v-for="item of items"

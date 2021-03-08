@@ -7,6 +7,7 @@ export default {
   },
   data() {
     return {
+      registermsg: 'Formulari de Registre',
       items: [
         {
           id: 1,
@@ -25,46 +26,49 @@ export default {
           errortext: 'This field is required',
           inputidtag: 'mobile-input',
           inputclass: 'form-control',
-          type: 'number',
+          type: 'text',
           label: 'Mobile Phone Number',
           labelclass: 'control-label',
           placeholder: '123456789',
           required: true,
-          value: '1'
+          value: ''
+        },
+        {
+          id: 3,
+          errortext: 'This field is required',
+          inputidtag: 'postal-code-input',
+          inputclass: 'form-control',
+          type: 'text',
+          label: 'Postal/Zip Code',
+          labelclass: 'control-label',
+          placeholder: '08080',
+          required: true,
+          value: ''
+        },
+        {
+          id: 4,
+          errortext: 'This field is required',
+          inputidtag: 'email-input',
+          inputclass: 'form-control',
+          type: 'email',
+          label: 'E-mail',
+          labelclass: 'control-label',
+          placeholder: 'mail@domain.com',
+          required: true,
+          value: ''
+        },
+        {
+          id: 5,
+          errortext: 'This field is required',
+          inputidtag: 'password-input',
+          inputclass: 'form-control',
+          type: 'password',
+          label: 'Password',
+          labelclass: 'control-label',
+          placeholder: 'Password',
+          required: true,
+          value: ''
         }
-        // {
-        //   id: 3,
-        //   inputidtag: 'postal-code-input',
-        //   inputclass: 'form-control',
-        //   type: 'number',
-        //   label: 'Postal/Zip Code',
-        //   labelclass: 'control-label',
-        //   placeholder: '12345',
-        //   required: true,
-        //   value: '2'
-        // },
-        // {
-        //   id: 4,
-        //   inputidtag: 'email-input',
-        //   inputclass: 'form-control',
-        //   type: 'email',
-        //   label: 'E-mail',
-        //   labelclass: 'control-label',
-        //   placeholder: 'mail@domain.com',
-        //   required: true,
-        //   value: ''
-        // },
-        // {
-        //   id: 5,
-        //   inputidtag: 'password-input',
-        //   inputclass: 'form-control',
-        //   type: 'password',
-        //   label: 'Password',
-        //   labelclass: 'control-label',
-        //   placeholder: 'Password',
-        //   required: true,
-        //   value: ''
-        // }
       ]
     }
   }
