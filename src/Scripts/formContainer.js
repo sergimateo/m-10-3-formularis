@@ -11,6 +11,7 @@ export default {
       items: [
         {
           id: 1,
+          checkField: false,
           errortext: 'This field is required',
           inputidtag: 'your-name-input',
           inputclass: 'form-control',
@@ -23,6 +24,7 @@ export default {
         },
         {
           id: 2,
+          checkField: false,
           errortext: 'This field is required',
           inputidtag: 'mobile-input',
           inputclass: 'form-control',
@@ -35,6 +37,7 @@ export default {
         },
         {
           id: 3,
+          checkField: false,
           errortext: 'This field is required',
           inputidtag: 'postal-code-input',
           inputclass: 'form-control',
@@ -47,6 +50,7 @@ export default {
         },
         {
           id: 4,
+          checkField: false,
           errortext: 'This field is required',
           inputidtag: 'email-input',
           inputclass: 'form-control',
@@ -59,6 +63,7 @@ export default {
         },
         {
           id: 5,
+          checkField: false,
           errortext: 'This field is required',
           inputidtag: 'password-input',
           inputclass: 'form-control',

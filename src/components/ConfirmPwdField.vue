@@ -14,8 +14,12 @@
           :type="dataconfirmpwditem.type"
           :placeholder="dataconfirmpwditem.placeholder"
           :class="dataconfirmpwditem.inputclass"
-        />{{ dataconfirmpwditem.textinsideinput }}
-        <span class="help-block" id="city-error"></span>
+          @input="confirmPwd"
+          :value="dataconfirmpwditem.value"
+        />
+        <span class="help-block" id="city-error">
+          {{ dataconfirmpwditem.errortext }}</span
+        >
       </div>
     </div>
   </div>

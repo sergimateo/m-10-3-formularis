@@ -9,17 +9,22 @@ export default {
   data() {
     return {
       cosita: 'Holi',
-      checkField: true,
-      confirmpwditems: {
+      // checkField: true,
+      confirmpwditem: {
         id: 1,
+        checkField: false,
+        pwdtoconfirm: '',
+        errortext: 'This field is required',
         inputidtag: 'repeat-password-input',
         inputclass: 'form-control',
         type: 'password',
         label: 'Confirm Password',
         labelclass: 'control-label',
         placeholder: 'Confirm Password',
-        required: true
-      }
+        required: true,
+        value: ''
+      },
+      dataitem: ['dataitem']
     }
   },
   methods: {
@@ -29,15 +34,15 @@ export default {
           if (event.target.value === '') {
             // this.dataitem.inputName.classList.add('is-invalid')
             this.dataitem.errortext = 'This field is required'
-            this.checkField = false
+            this.dataitem.checkField = false
           } else if (!this.validateName(event.target.value)) {
             this.dataitem.errortext =
               'Your name must have between 6 and 13 characters'
-            this.checkField = false
+            this.dataitem.checkField = false
           } else {
             // inputName.classList.remove('is-invalid')
             this.dataitem.errortext = ''
-            this.checkField = true
+            this.dataitem.checkField = true
           }
           this.updateContent(event.target.value)
           break
@@ -45,14 +50,14 @@ export default {
           if (event.target.value === '') {
             // this.dataitem.inputName.classList.add('is-invalid')
             this.dataitem.errortext = 'This field is required'
-            this.checkField = false
+            this.dataitem.checkField = false
           } else if (!this.validateMobile(event.target.value)) {
             this.dataitem.errortext = 'Your phone number must have 9 digits'
-            this.checkField = false
+            this.dataitem.checkField = false
           } else {
             // inputName.classList.remove('is-invalid')
             this.dataitem.errortext = ''
-            this.checkField = true
+            this.dataitem.checkField = true
           }
           this.updateContent(event.target.value)
           break
@@ -60,14 +65,14 @@ export default {
           if (event.target.value === '') {
             // this.dataitem.inputName.classList.add('is-invalid')
             this.dataitem.errortext = 'This field is required'
-            this.checkField = false
+            this.dataitem.checkField = false
           } else if (!this.validatePostalCode(event.target.value)) {
             this.dataitem.errortext = 'Your Postal Code must have 5 digits'
-            this.checkField = false
+            this.dataitem.checkField = false
           } else {
             // inputName.classList.remove('is-invalid')
             this.dataitem.errortext = ''
-            this.checkField = true
+            this.dataitem.checkField = true
           }
           this.updateContent(event.target.value)
           break
@@ -75,34 +80,40 @@ export default {
           if (event.target.value === '') {
             // this.dataitem.inputName.classList.add('is-invalid')
             this.dataitem.errortext = 'This field is required'
-            this.checkField = false
+            this.dataitem.checkField = false
           } else if (!this.validateEmail(event.target.value)) {
             this.dataitem.errortext = 'Please enter a valid email address'
-            this.checkField = false
+            this.dataitem.checkField = false
           } else {
             // inputName.classList.remove('is-invalid')
             this.dataitem.errortext = ''
-            this.checkField = true
+            this.dataitem.checkField = true
           }
           this.updateContent(event.target.value)
           break
         case 'password-input':
-          if (event.target.value === '') {
+          if (this.confirmpwditem.checkField) {
+            this.dataitem.checkField = true
+          } else if (event.target.value === '') {
             // this.dataitem.inputName.classList.add('is-invalid')
             this.dataitem.errortext = 'This field is required'
-            this.checkField = false
+            this.dataitem.checkField = false
           } else if (!this.validatePassword(event.target.value)) {
             this.dataitem.errortext =
-              'Your password needs to be between 6 and 13 characters long, only letters and at least one uppercase and one lowercase'
-            this.checkField = false
+              'Password needs to be 6 to 13 characters long, with at least one uppercase and one lowercase'
+            this.dataaitem.checkField = false
           } else {
             // inputName.classList.remove('is-invalid')
             this.dataitem.errortext = ''
-            this.checkField = true
+            // this.dataitem.checkField = true
+            // this.cosita = event.target.value
           }
 
-          console.log(this.dataitem.value)
+          this.updateContent(event.target.value)
+          this.confirmpwditem.pwdtoconfirm = event.target.value
+
           break
+
         default:
           break
       }
@@ -131,7 +142,7 @@ export default {
       return regex.test(number) ? true : false
     },
     validatePostalCode(number) {
-      let regex = /^(?=.*?[0-9]).{9}$/
+      let regex = /^(?=.*?[0-9]).{5}$/
       return regex.test(number) ? true : false
     },
     validateEmail(email) {
@@ -139,31 +150,12 @@ export default {
       return regex.test(email) ? true : false
     },
     validatePassword(password) {
-      let regex = /^(?=.*?[a-zA-Z\ñ\ç]).{6,13}$/
+      let regex = /^(?=.*[a-z])(?=.*[A-Z]).{6,13}$/
       return regex.test(password) ? true : false
     }
   },
   props: ['dataitem']
 }
-
-//   // Check confirm password, if they don't match, clear both password fields and try again
-//   // A1sdfghj
-//   if (inputRepeatPassword.value == '') {
-//     inputPassword.classList.add('is-invalid')
-//     document.getElementById('repeat-password-error').textContent =
-//       'This field is required'
-//     checkForm = false
-//   } else if (inputRepeatPassword.value != inputPassword.value) {
-//     inputRepeatPassword.classList.add('is-invalid')
-//     inputPassword.value = ''
-//     inputRepeatPassword.value = ''
-//     document.getElementById('repeat-password-error').textContent =
-//       'Your password does not match. Try again.'
-//     checkForm = false
-//   } else {
-//     inputRepeatPassword.classList.remove('is-invalid')
-//     document.getElementById('repeat-password-error').textContent = ''
-//   }
 
 //   console.log(checkForm)
 

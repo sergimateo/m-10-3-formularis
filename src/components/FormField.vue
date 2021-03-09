@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="form-row">
+    <div class="form-row pb-2">
       <div class="form-group col-lg">
         <label :class="dataitem.labelclass" :for="dataitem.inputidtag">
           {{ dataitem.label }}
@@ -23,8 +23,9 @@
     </div>
     <ConfirmPwdField
       v-if="dataitem.inputidtag === 'password-input'"
-      :key="confirmpwditems.id"
-      :dataconfirmpwditem="confirmpwditems"
+      :key="confirmpwditem.id"
+      :dataconfirmpwditem="confirmpwditem"
+      @pwdContentChanged="confirmpwditem.value = $event"
     >
     </ConfirmPwdField>
   </div>

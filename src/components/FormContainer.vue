@@ -20,14 +20,14 @@
           <button
             id="submit-register-button"
             type="submit"
-            class="btn btn-secondary mr-2"
+            class="btn btn-danger mr-2"
           >
-            Submit
+            Join Us
           </button>
         </div>
       </form>
     </div>
-    <footer class="pt-3">© Copyright 2021 - SMC Designs</footer>
+    <footer class="pt-3">© 2021 - SMC Designs</footer>
   </section>
 </template>
 

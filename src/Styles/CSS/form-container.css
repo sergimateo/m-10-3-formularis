@@ -9,7 +9,8 @@
   margin-right: auto;
 }
 
-.register-text {
+.register-text,
+footer {
   font-family: MyFont, sans-serif;
 }
 /*# sourceMappingURL=form-container.css.map */
