@@ -3,8 +3,7 @@ export default {
   components: {},
   data() {
     return {
-      cosita: 'Holi',
-      dataconfirmpwditem: ['dataconfirmpwditem']
+      cosita: 'Holi'
     }
   },
   methods: {
@@ -13,6 +12,7 @@ export default {
         this.dataconfirmpwditem.errortext = 'This field is required'
         this.dataconfirmpwditem.checkField = false
       } else if (this.dataconfirmpwditem.pwdtoconfirm === event.target.value) {
+        this.$parent.dataitem.checkField = true
         this.dataconfirmpwditem.checkField = true
         this.dataconfirmpwditem.errortext = ''
       } else if (this.dataconfirmpwditem.pwdtoconfirm !== event.target.value) {

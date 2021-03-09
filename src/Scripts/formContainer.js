@@ -7,7 +7,9 @@ export default {
   },
   data() {
     return {
-      registermsg: 'Formulari de Registre',
+      registermsg: 'v ole como mola',
+      showForm: true,
+      falseForm: false,
       items: [
         {
           id: 1,
@@ -75,6 +77,27 @@ export default {
           value: ''
         }
       ]
+    }
+  },
+  methods: {
+    checkForm(event) {
+      event.preventDefault()
+      this.falseForm = false
+      this.items.forEach(item => {
+        if (!item.checkField) {
+          this.falseForm = true
+          console.log('holi')
+        } else {
+          console.log('true')
+        }
+      })
+      if (!this.falseForm) {
+        this.toggleForm()
+      }
+      // this.showForm = this.falseForm
+    },
+    toggleForm() {
+      this.showForm = !this.showForm
     }
   }
 }

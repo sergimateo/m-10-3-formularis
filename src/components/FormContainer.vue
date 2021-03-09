@@ -1,8 +1,13 @@
 <template>
   <section id="validation-section">
-    <div class="pt-2 container-fluid">
+    <div v-if="showForm" class="container-fluid">
+      <img
+        id="visitors-v-logo"
+        alt="Vue logo"
+        src="./../assets/visitors-logo.jpg"
+      />
       <form
-        class="form-horizontal"
+        class="form-horizontal pt-2"
         id="validation-form"
         action="register-complete.html"
       >
@@ -20,14 +25,16 @@
           <button
             id="submit-register-button"
             type="submit"
+            @click="checkForm"
             class="btn btn-danger mr-2"
           >
             Join Us
           </button>
         </div>
       </form>
+      <footer class="pt-3 mb-4">© 2021 smc designs</footer>
     </div>
-    <footer class="pt-3">© 2021 - SMC Designs</footer>
+    <div v-else @click="toggleForm" class="thankyou"></div>
   </section>
 </template>
 

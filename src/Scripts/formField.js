@@ -23,8 +23,7 @@ export default {
         placeholder: 'Confirm Password',
         required: true,
         value: ''
-      },
-      dataitem: ['dataitem']
+      }
     }
   },
   methods: {
@@ -92,16 +91,14 @@ export default {
           this.updateContent(event.target.value)
           break
         case 'password-input':
-          if (this.confirmpwditem.checkField) {
-            this.dataitem.checkField = true
-          } else if (event.target.value === '') {
+          if (event.target.value === '') {
             // this.dataitem.inputName.classList.add('is-invalid')
             this.dataitem.errortext = 'This field is required'
             this.dataitem.checkField = false
           } else if (!this.validatePassword(event.target.value)) {
             this.dataitem.errortext =
               'Password needs to be 6 to 13 characters long, with at least one uppercase and one lowercase'
-            this.dataaitem.checkField = false
+            this.dataitem.checkField = false
           } else {
             // inputName.classList.remove('is-invalid')
             this.dataitem.errortext = ''
@@ -117,8 +114,8 @@ export default {
         default:
           break
       }
-      this.dataitem.value = event.target.value
-      this.$emit('contentChanged', this.dataitem.value)
+      // this.dataitem.value = event.target.value
+      // this.$emit('contentChanged', this.dataitem.value)
       // checkField = false
       // if (checkField) {
       //   return true

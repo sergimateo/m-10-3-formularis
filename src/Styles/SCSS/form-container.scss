@@ -1,12 +1,29 @@
 //
+@import "reset";
+
 @font-face {
     font-family: MyFont;
     src: url(./../../fonts/visitor-2009.ttf?raw=true);
+}
+#visitors-v-logo {
+    margin: 60px auto 20px auto;
+    max-width: 80px;
 }
 #validation-form {
     width: 60%;
     margin-left: auto;
     margin-right: auto;
+}
+
+.thankyou {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("../../assets/diane_3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 .register-text,
 footer {
