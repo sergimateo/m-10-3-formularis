@@ -1,11 +1,6 @@
 export default {
   name: 'app-confirm-pwd-field',
   components: {},
-  data() {
-    return {
-      cosita: 'Holi'
-    }
-  },
   methods: {
     confirmPwd(event) {
       if (event.target.value === '') {
