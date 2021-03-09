@@ -21,7 +21,6 @@ export default {
           label: 'Your Name',
           labelclass: 'control-label',
           placeholder: 'John Doe / Jane Doe',
-          required: true,
           value: ''
         },
         {
@@ -34,7 +33,6 @@ export default {
           label: 'Mobile Phone Number',
           labelclass: 'control-label',
           placeholder: '123456789',
-          required: true,
           value: ''
         },
         {
@@ -47,7 +45,6 @@ export default {
           label: 'Postal/Zip Code',
           labelclass: 'control-label',
           placeholder: '08080',
-          required: true,
           value: ''
         },
         {
@@ -60,7 +57,6 @@ export default {
           label: 'E-mail',
           labelclass: 'control-label',
           placeholder: 'mail@domain.com',
-          required: true,
           value: ''
         },
         {
@@ -73,7 +69,6 @@ export default {
           label: 'Password',
           labelclass: 'control-label',
           placeholder: 'Password',
-          required: true,
           value: ''
         }
       ]
@@ -94,7 +89,6 @@ export default {
       if (!this.falseForm) {
         this.toggleForm()
       }
-      // this.showForm = this.falseForm
     },
     toggleForm() {
       this.showForm = !this.showForm

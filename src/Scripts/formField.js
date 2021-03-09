@@ -6,10 +6,9 @@ export default {
   components: {
     ConfirmPwdField
   },
+  props: ['dataitem'],
   data() {
     return {
-      cosita: 'Holi',
-      // checkField: true,
       confirmpwditem: {
         id: 1,
         checkField: false,
@@ -21,7 +20,6 @@ export default {
         label: 'Confirm Password',
         labelclass: 'control-label',
         placeholder: 'Confirm Password',
-        required: true,
         value: ''
       }
     }
@@ -31,7 +29,6 @@ export default {
       switch (this.dataitem.inputidtag) {
         case 'your-name-input':
           if (event.target.value === '') {
-            // this.dataitem.inputName.classList.add('is-invalid')
             this.dataitem.errortext = 'This field is required'
             this.dataitem.checkField = false
           } else if (!this.validateName(event.target.value)) {
@@ -39,7 +36,6 @@ export default {
               'Your name must have between 6 and 13 characters'
             this.dataitem.checkField = false
           } else {
-            // inputName.classList.remove('is-invalid')
             this.dataitem.errortext = ''
             this.dataitem.checkField = true
           }
@@ -47,14 +43,12 @@ export default {
           break
         case 'mobile-input':
           if (event.target.value === '') {
-            // this.dataitem.inputName.classList.add('is-invalid')
             this.dataitem.errortext = 'This field is required'
             this.dataitem.checkField = false
           } else if (!this.validateMobile(event.target.value)) {
             this.dataitem.errortext = 'Your phone number must have 9 digits'
             this.dataitem.checkField = false
           } else {
-            // inputName.classList.remove('is-invalid')
             this.dataitem.errortext = ''
             this.dataitem.checkField = true
           }
@@ -62,14 +56,12 @@ export default {
           break
         case 'postal-code-input':
           if (event.target.value === '') {
-            // this.dataitem.inputName.classList.add('is-invalid')
             this.dataitem.errortext = 'This field is required'
             this.dataitem.checkField = false
           } else if (!this.validatePostalCode(event.target.value)) {
             this.dataitem.errortext = 'Your Postal Code must have 5 digits'
             this.dataitem.checkField = false
           } else {
-            // inputName.classList.remove('is-invalid')
             this.dataitem.errortext = ''
             this.dataitem.checkField = true
           }
@@ -77,14 +69,12 @@ export default {
           break
         case 'email-input':
           if (event.target.value === '') {
-            // this.dataitem.inputName.classList.add('is-invalid')
             this.dataitem.errortext = 'This field is required'
             this.dataitem.checkField = false
           } else if (!this.validateEmail(event.target.value)) {
             this.dataitem.errortext = 'Please enter a valid email address'
             this.dataitem.checkField = false
           } else {
-            // inputName.classList.remove('is-invalid')
             this.dataitem.errortext = ''
             this.dataitem.checkField = true
           }
@@ -92,7 +82,6 @@ export default {
           break
         case 'password-input':
           if (event.target.value === '') {
-            // this.dataitem.inputName.classList.add('is-invalid')
             this.dataitem.errortext = 'This field is required'
             this.dataitem.checkField = false
           } else if (!this.validatePassword(event.target.value)) {
@@ -100,30 +89,14 @@ export default {
               'Password needs to be 6 to 13 characters long, with at least one uppercase and one lowercase'
             this.dataitem.checkField = false
           } else {
-            // inputName.classList.remove('is-invalid')
             this.dataitem.errortext = ''
-            // this.dataitem.checkField = true
-            // this.cosita = event.target.value
           }
-
           this.updateContent(event.target.value)
           this.confirmpwditem.pwdtoconfirm = event.target.value
-
           break
-
         default:
           break
       }
-      // this.dataitem.value = event.target.value
-      // this.$emit('contentChanged', this.dataitem.value)
-      // checkField = false
-      // if (checkField) {
-      //   return true
-      // } else {
-      //   return false
-      // }
-
-      // this.btnCount++
     },
     updateContent(val) {
       this.dataitem.value = val
@@ -150,15 +123,5 @@ export default {
       let regex = /^(?=.*[a-z])(?=.*[A-Z]).{6,13}$/
       return regex.test(password) ? true : false
     }
-  },
-  props: ['dataitem']
+  }
 }
-
-//   console.log(checkForm)
-
-//   if (checkForm) {
-//     return true
-//   } else {
-//     return false
-//   }
-// }

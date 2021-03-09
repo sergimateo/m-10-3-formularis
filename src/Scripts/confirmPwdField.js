@@ -25,22 +25,3 @@ export default {
   },
   props: ['dataconfirmpwditem']
 }
-
-//   // Check confirm password, if they don't match, clear both password fields and try again
-//   // A1sdfghj
-//   if (inputRepeatPassword.value == '') {
-//     inputPassword.classList.add('is-invalid')
-//     document.getElementById('repeat-password-error').textContent =
-//       'This field is required'
-//     checkForm = false
-//   } else if (inputRepeatPassword.value != inputPassword.value) {
-//     inputRepeatPassword.classList.add('is-invalid')
-//     inputPassword.value = ''
-//     inputRepeatPassword.value = ''
-//     document.getElementById('repeat-password-error').textContent =
-//       'Your password does not match. Try again.'
-//     checkForm = false
-//   } else {
-//     inputRepeatPassword.classList.remove('is-invalid')
-//     document.getElementById('repeat-password-error').textContent = ''
-//   }
