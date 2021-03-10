@@ -51,11 +51,20 @@ input {
 
 @font-face {
   font-family: MyFont;
-  src: url(./../../fonts/visitor-2009.ttf?raw=true);
+  src: url(./../../assets/fonts/visitor-2009.ttf);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#validation-form {
+  height: 100%;
 }
 
 #visitors-v-logo {
-  margin: 60px auto 20px auto;
+  margin: 5px auto 15px auto;
   max-width: 80px;
 }
 
