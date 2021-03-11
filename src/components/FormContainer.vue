@@ -4,7 +4,7 @@
       <img
         id="visitors-v-logo"
         alt="Vue logo"
-        src="./../assets/visitors-logo.jpg"
+        src="./../assets/images/visitors-logo.jpg"
       />
       <form
         class="form-horizontal pt-2"

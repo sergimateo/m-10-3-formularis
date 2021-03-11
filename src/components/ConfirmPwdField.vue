@@ -17,7 +17,11 @@
           @input="confirmPwd"
           :value="dataconfirmpwditem.value"
         />
-        <span class="help-block" id="city-error">
+        <span
+          class="help-block"
+          :style="dataconfirmpwditem.showerror"
+          id="city-error"
+        >
           {{ dataconfirmpwditem.errortext }}</span
         >
       </div>

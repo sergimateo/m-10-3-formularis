@@ -16,11 +16,12 @@ export default {
           checkField: false,
           errortext: 'This field is required',
           inputidtag: 'your-name-input',
-          inputclass: 'form-control',
+          inputclass: 'form-control input-sm',
           type: 'text',
           label: 'Your Name',
           labelclass: 'control-label',
           placeholder: 'John Doe / Jane Doe',
+          showerror: 'visibility: visible;',
           value: ''
         },
         {
@@ -33,6 +34,7 @@ export default {
           label: 'Mobile Phone Number',
           labelclass: 'control-label',
           placeholder: '123456789',
+          showerror: 'visibility: visible;',
           value: ''
         },
         {
@@ -45,6 +47,7 @@ export default {
           label: 'Postal/Zip Code',
           labelclass: 'control-label',
           placeholder: '08080',
+          showerror: 'visibility: visible;',
           value: ''
         },
         {
@@ -57,6 +60,7 @@ export default {
           label: 'E-mail',
           labelclass: 'control-label',
           placeholder: 'mail@domain.com',
+          showerror: 'visibility: visible;',
           value: ''
         },
         {
@@ -69,6 +73,7 @@ export default {
           label: 'Password',
           labelclass: 'control-label',
           placeholder: 'Password',
+          showerror: 'visibility: visible;',
           value: ''
         }
       ]

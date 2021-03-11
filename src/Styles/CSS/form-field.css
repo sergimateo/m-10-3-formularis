@@ -1,5 +1,27 @@
 .help-block {
   color: crimson;
+  display: block;
+}
+
+::-webkit-input-placeholder {
+  font-size: 1.5vh;
+}
+
+:-ms-input-placeholder {
+  font-size: 1.5vh;
+}
+
+::-ms-input-placeholder {
+  font-size: 1.5vh;
+}
+
+::placeholder {
+  font-size: 1.5vh;
+}
+
+input {
+  padding: 55px 10px;
+  line-height: 140%;
 }
 
 label {

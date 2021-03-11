@@ -1,6 +1,16 @@
 //
 .help-block {
     color: crimson;
+    display: block;
+}
+::placeholder {
+    font-size: 1.5vh;
+    // height: 1.5vh;
+    // font-weight: bold;
+}
+input {
+    padding: 55px 10px;
+    line-height: 140%;
 }
 label {
     font-weight: bold;

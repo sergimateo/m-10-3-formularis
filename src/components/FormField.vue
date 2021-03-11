@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="form-row pb-2">
-      <div class="form-group col-lg">
+    <div class="form-row">
+      <div class="form-group col-lg mb-1">
         <label :class="dataitem.labelclass" :for="dataitem.inputidtag">
           {{ dataitem.label }}
         </label>
@@ -15,9 +15,9 @@
             @input="fieldValidate"
             :value="dataitem.value"
           />
-          <span class="help-block" id="error-text">
+          <div class="help-block" :style="dataitem.showerror" id="error-text">
             {{ dataitem.errortext }}
-          </span>
+          </div>
         </div>
       </div>
     </div>

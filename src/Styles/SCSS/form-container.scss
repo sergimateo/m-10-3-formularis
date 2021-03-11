@@ -6,17 +6,24 @@
     src: url(./../../assets/fonts/visitor-2009.ttf);
 }
 
-html,
-body {
+// html,
+// body {
+//     height: 100%;
+// }
+// input {
+//     font-size: 10px;
+// }
+.container-fluid {
     height: 100%;
 }
 #validation-form {
     height: 100%;
+    font-size: 1.5vh;
 }
 
 #visitors-v-logo {
-    margin: 5px auto 15px auto;
-    max-width: 80px;
+    margin: 1% auto 1% auto;
+    height: 5vh;
 }
 #validation-form {
     width: 60%;
@@ -29,7 +36,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url("../../assets/diane_4.jpg");
+    background-image: url("../../assets/images/diane_4.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
