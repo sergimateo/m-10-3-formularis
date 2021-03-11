@@ -19,12 +19,16 @@
   font-size: 1.5vh;
 }
 
-input {
-  padding: 55px 10px;
-  line-height: 140%;
-}
-
 label {
   font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"] {
+  height: 3.5vh;
+  font-size: 2vh;
+  line-height: auto;
 }
 /*# sourceMappingURL=form-field.css.map */

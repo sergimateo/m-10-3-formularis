@@ -15,10 +15,10 @@ export default {
         pwdtoconfirm: '',
         errortext: 'This field is required',
         inputidtag: 'repeat-password-input',
-        inputclass: 'form-control',
+        inputclass: 'form-control form-control-sm',
         type: 'password',
         label: 'Confirm Password',
-        labelclass: 'control-label',
+        labelclass: 'control-label mb-auto',
         placeholder: 'Confirm Password',
         showerror: 'visibility: visible;',
         value: ''

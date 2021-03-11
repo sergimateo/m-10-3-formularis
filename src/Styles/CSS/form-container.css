@@ -54,18 +54,23 @@ input {
   src: url(./../../assets/fonts/visitor-2009.ttf);
 }
 
+.register-text {
+  font-family: MyFont, sans-serif;
+  font-size: 2vh;
+}
+
 .container-fluid {
   height: 100%;
 }
 
-#validation-form {
+#validation-section {
   height: 100%;
-  font-size: 1.5vh;
+  font-size: 1.7vh;
 }
 
 #visitors-v-logo {
   margin: 1% auto 1% auto;
-  height: 5vh;
+  height: 9vh;
 }
 
 #validation-form {
@@ -91,8 +96,12 @@ input {
   background-position: center;
 }
 
-.register-text,
+#submit-register-button {
+  font-size: 2vh;
+}
+
 footer {
   font-family: MyFont, sans-serif;
+  font-size: 1vh;
 }
 /*# sourceMappingURL=form-container.css.map */

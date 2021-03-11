@@ -1,6 +1,6 @@
 <template>
   <div class="form-row">
-    <div class="form-group col-lg">
+    <div class="form-group col-lg mb-1">
       <label
         :class="dataconfirmpwditem.labelclass"
         :for="dataconfirmpwditem.inputidtag"

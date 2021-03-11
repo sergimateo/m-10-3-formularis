@@ -20,13 +20,13 @@
           @contentChanged="item.value = $event"
         >
         </FormField>
-        <label class="col-md-4 control-label" for="register-button-id"></label>
+
         <div class="">
           <button
             id="submit-register-button"
             type="submit"
             @click="checkForm"
-            class="btn btn-danger mr-2"
+            class="btn btn-danger mt-2"
           >
             Join Us
           </button>
